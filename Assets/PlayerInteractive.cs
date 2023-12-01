@@ -1,47 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerInteractive : MonoBehaviour
 {
     public Transform[] doors;
     private int beforeDoorIndex = -1; // Baþlangýçta hiç kapý seçilmemiþ durumunda
 
-    private void Update()
+    public void RandomDoor()
     {
-        if (Input.GetKeyDown(KeyCode.E) && gameObject.CompareTag("Player1"))
+        if (doors.Length > 0)
         {
-            RandomDoor();
+           int randomIndex;
+
+           do
+           {
+               randomIndex = Random.Range(0, doors.Length);
+           }
+           while (randomIndex == beforeDoorIndex);
+
+           Transform selectedDoor = doors[randomIndex];
+
+           // Karakterin pozisyonunu seçilen kapýnýn pozisyonuna ayarla
+           transform.position = selectedDoor.position;
+
+           // Seçilen kapýyý bir sonraki iþleme geçmeden önce sakla
+           beforeDoorIndex = randomIndex;
+
+           Debug.Log("Rastgele olarak seçilen kapýya ýþýnlandý: " + selectedDoor.name);
         }
-        else if (Input.GetKeyDown(KeyCode.M) && gameObject.CompareTag("Player2"))
+        else
+        {
+           Debug.LogError("Kapý dizisi boþ!");
+        }
+    }
+    public void player1DoorControl()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
         {
             RandomDoor();
         }
     }
-    void RandomDoor()
+    public void player2DoorControl()
     {
-        if (doors.Length > 0)
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            int randomIndex;
-
-            do
-            {
-                randomIndex = Random.Range(0, doors.Length);
-            } while (randomIndex == beforeDoorIndex);
-
-            Transform selectedDoor = doors[randomIndex];
-
-            // Karakterin pozisyonunu seçilen kapýnýn pozisyonuna ayarla
-            transform.position = selectedDoor.position;
-
-            // Seçilen kapýyý bir sonraki iþleme geçmeden önce sakla
-            beforeDoorIndex = randomIndex;
-
-            Debug.Log("Rastgele olarak seçilen kapýya ýþýnlandý: " + selectedDoor.name);
-        }
-        else
-        {
-            Debug.LogError("Kapý dizisi boþ!");
+            RandomDoor();
         }
     }
 }
