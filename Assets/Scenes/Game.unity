@@ -231,12 +231,12 @@ GameObject:
   - component: {fileID: 55007026}
   - component: {fileID: 55007027}
   m_Layer: 0
-  m_Name: Light 2D (3)
-  m_TagString: Untagged
+  m_Name: Light 2D 1
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &55007026
 Transform:
   m_ObjectHideFlags: 0
@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 126559405}
   - component: {fileID: 126559404}
   - component: {fileID: 126559409}
+  - component: {fileID: 126559410}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player2
@@ -439,11 +440,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f189d5d26fd291644b97c577183f5465, type: 3}
   m_Color: {r: 1, g: 0.84931326, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -459,7 +460,7 @@ Transform:
   m_GameObject: {fileID: 126559403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.52, y: -0.77, z: 0}
+  m_LocalPosition: {x: 3.52, y: -1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -483,6 +484,27 @@ MonoBehaviour:
   - {fileID: 776284268}
   - {fileID: 392972013}
   - {fileID: 1581769133}
+--- !u!95 &126559410
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126559403}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 179297c13d41080419b26c48ee6fada6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &233302492
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +615,7 @@ GameObject:
   - component: {fileID: 239708471}
   - component: {fileID: 239708474}
   m_Layer: 0
-  m_Name: Closed Light (2)
+  m_Name: Closed Light 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,17 +742,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 239708470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcceb643f742f94ea6852e2e8686e7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2316dd7317b28eb4ca7ba3bf54f3b348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openLight: {fileID: 21300000, guid: 13cc7352b2680094999ed3bd2506830f, type: 3}
-  closeLight: {fileID: 21300000, guid: 70df8778a8fe63745b7cc3fe2c67172d, type: 3}
-  whiteLights:
-  - {fileID: 669905467}
-  - {fileID: 779255529}
-  - {fileID: 668339062}
-  - {fileID: 55007027}
-  - {fileID: 2044542685}
+  player1: {fileID: 1923387060}
+  player2: {fileID: 126559403}
+  associatedLight: {fileID: 779255527}
+  isTrigger: 0
 --- !u!1 &392972011
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +908,7 @@ GameObject:
   - component: {fileID: 426602076}
   - component: {fileID: 426602079}
   m_Layer: 0
-  m_Name: Closed Light
+  m_Name: Closed Light 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1017,17 +1035,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 426602075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcceb643f742f94ea6852e2e8686e7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2316dd7317b28eb4ca7ba3bf54f3b348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openLight: {fileID: 21300000, guid: 13cc7352b2680094999ed3bd2506830f, type: 3}
-  closeLight: {fileID: 21300000, guid: 70df8778a8fe63745b7cc3fe2c67172d, type: 3}
-  whiteLights:
-  - {fileID: 669905467}
-  - {fileID: 779255529}
-  - {fileID: 668339062}
-  - {fileID: 55007027}
-  - {fileID: 2044542685}
+  player1: {fileID: 1923387060}
+  player2: {fileID: 126559403}
+  associatedLight: {fileID: 55007025}
+  isTrigger: 0
 --- !u!1 &479911021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1367,7 @@ GameObject:
   - component: {fileID: 654262710}
   - component: {fileID: 654262709}
   m_Layer: 0
-  m_Name: White Light (4)
+  m_Name: White Light 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1438,12 +1452,12 @@ GameObject:
   - component: {fileID: 668339061}
   - component: {fileID: 668339062}
   m_Layer: 0
-  m_Name: Light 2D (2)
-  m_TagString: Untagged
+  m_Name: Light 2D 2
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &668339061
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,12 +1534,12 @@ GameObject:
   - component: {fileID: 669905466}
   - component: {fileID: 669905467}
   m_Layer: 0
-  m_Name: Light 2D
-  m_TagString: Untagged
+  m_Name: Light 2D 4
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &669905466
 Transform:
   m_ObjectHideFlags: 0
@@ -1689,7 +1703,7 @@ GameObject:
   - component: {fileID: 742700117}
   - component: {fileID: 742700120}
   m_Layer: 0
-  m_Name: Closed Light (3)
+  m_Name: Closed Light 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1816,17 +1830,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 742700116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcceb643f742f94ea6852e2e8686e7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2316dd7317b28eb4ca7ba3bf54f3b348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openLight: {fileID: 21300000, guid: 13cc7352b2680094999ed3bd2506830f, type: 3}
-  closeLight: {fileID: 21300000, guid: 70df8778a8fe63745b7cc3fe2c67172d, type: 3}
-  whiteLights:
-  - {fileID: 669905467}
-  - {fileID: 779255529}
-  - {fileID: 668339062}
-  - {fileID: 55007027}
-  - {fileID: 2044542685}
+  player1: {fileID: 1923387060}
+  player2: {fileID: 126559403}
+  associatedLight: {fileID: 669905465}
+  isTrigger: 0
 --- !u!1 &762892083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1850,7 @@ GameObject:
   - component: {fileID: 762892084}
   - component: {fileID: 762892087}
   m_Layer: 0
-  m_Name: Closed Light (1)
+  m_Name: Closed Light 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1967,17 +1977,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 762892083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcceb643f742f94ea6852e2e8686e7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2316dd7317b28eb4ca7ba3bf54f3b348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openLight: {fileID: 21300000, guid: 13cc7352b2680094999ed3bd2506830f, type: 3}
-  closeLight: {fileID: 21300000, guid: 70df8778a8fe63745b7cc3fe2c67172d, type: 3}
-  whiteLights:
-  - {fileID: 669905467}
-  - {fileID: 779255529}
-  - {fileID: 668339062}
-  - {fileID: 55007027}
-  - {fileID: 2044542685}
+  player1: {fileID: 1923387060}
+  player2: {fileID: 126559403}
+  associatedLight: {fileID: 668339060}
+  isTrigger: 0
 --- !u!1 &774550238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,12 +2226,12 @@ GameObject:
   - component: {fileID: 779255528}
   - component: {fileID: 779255529}
   m_Layer: 0
-  m_Name: Light 2D (1)
-  m_TagString: Untagged
+  m_Name: Light 2D 3
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779255528
 Transform:
   m_ObjectHideFlags: 0
@@ -2716,8 +2722,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.004300058, y: -0.007099986, z: 0}
-    m_Extent: {x: 1.4824, y: 1.4825, z: 0}
+    m_Center: {x: -0.000100016594, y: 0.007400036, z: 0}
+    m_Extent: {x: 1.4811, y: 1.4814, z: 0}
   m_PointLightInnerAngle: 56.84
   m_PointLightOuterAngle: 56.84
   m_PointLightInnerRadius: 2.07
@@ -2797,10 +2803,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1205441986}
-  - {fileID: 1566990066}
-  - {fileID: 1843936746}
   - {fileID: 1308576878}
+  - {fileID: 1843936746}
+  - {fileID: 1566990066}
+  - {fileID: 1205441986}
   - {fileID: 654262710}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3176,7 +3182,7 @@ GameObject:
   - component: {fileID: 1205441986}
   - component: {fileID: 1205441985}
   m_Layer: 0
-  m_Name: White Light
+  m_Name: White Light 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3383,7 +3389,7 @@ GameObject:
   - component: {fileID: 1308576878}
   - component: {fileID: 1308576877}
   m_Layer: 0
-  m_Name: White Light (3)
+  m_Name: White Light 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4411,7 +4417,7 @@ GameObject:
   - component: {fileID: 1566990066}
   - component: {fileID: 1566990065}
   m_Layer: 0
-  m_Name: White Light (1)
+  m_Name: White Light 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4838,7 +4844,7 @@ GameObject:
   - component: {fileID: 1785439940}
   - component: {fileID: 1785439943}
   m_Layer: 0
-  m_Name: Closed Light (4)
+  m_Name: Closed Light 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4965,17 +4971,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1785439939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcceb643f742f94ea6852e2e8686e7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2316dd7317b28eb4ca7ba3bf54f3b348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openLight: {fileID: 21300000, guid: 13cc7352b2680094999ed3bd2506830f, type: 3}
-  closeLight: {fileID: 21300000, guid: 70df8778a8fe63745b7cc3fe2c67172d, type: 3}
-  whiteLights:
-  - {fileID: 669905467}
-  - {fileID: 779255529}
-  - {fileID: 668339062}
-  - {fileID: 55007027}
-  - {fileID: 2044542685}
+  player1: {fileID: 1923387060}
+  player2: {fileID: 126559403}
+  associatedLight: {fileID: 2044542683}
+  isTrigger: 0
 --- !u!1 &1822908722
 GameObject:
   m_ObjectHideFlags: 0
@@ -5084,7 +5086,7 @@ GameObject:
   - component: {fileID: 1843936746}
   - component: {fileID: 1843936745}
   m_Layer: 0
-  m_Name: White Light (2)
+  m_Name: White Light 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5224,8 +5226,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.003099978, y: -0.007100016, z: 0}
-    m_Extent: {x: 1.0065999, y: 1.0004001, z: 0}
+    m_Center: {x: -0.0068000257, y: 0.0023499727, z: 0}
+    m_Extent: {x: 1.0007, y: 1.00465, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5254,6 +5256,7 @@ GameObject:
   - component: {fileID: 1923387061}
   - component: {fileID: 1923387065}
   - component: {fileID: 1923387066}
+  - component: {fileID: 1923387067}
   m_Layer: 0
   m_Name: ' Player 1'
   m_TagString: Player1
@@ -5364,11 +5367,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3529412}
+  m_Sprite: {fileID: 21300000, guid: 610d14ff507c32b478b1b817960f80d3, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.3529412}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -5384,7 +5387,7 @@ Transform:
   m_GameObject: {fileID: 1923387060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3, y: -0.73, z: 0}
+  m_LocalPosition: {x: -4.3, y: -1.319, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5421,6 +5424,27 @@ MonoBehaviour:
   - {fileID: 776284268}
   - {fileID: 392972013}
   - {fileID: 1581769133}
+--- !u!95 &1923387067
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923387060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1b7085e914f62c4982747f46c3476c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2044542683
 GameObject:
   m_ObjectHideFlags: 0
@@ -5432,12 +5456,12 @@ GameObject:
   - component: {fileID: 2044542684}
   - component: {fileID: 2044542685}
   m_Layer: 0
-  m_Name: Light 2D (4)
-  m_TagString: Untagged
+  m_Name: Light 2D 5
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2044542684
 Transform:
   m_ObjectHideFlags: 0
