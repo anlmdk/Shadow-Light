@@ -8,54 +8,54 @@ public class WhiteLightControl : MonoBehaviour
     public GameObject associatedLight;
     public bool isTrigger;
 
+    public Sprite openSprite;
+    public Sprite closeSprite;
+
+    private bool isPlayer1InTrigger = false;
+    private bool isPlayer2InTrigger = false;
+
     private bool isLightOn = false;
+
+    private SpriteRenderer buttonSpriteRenderer;
+
+    private void Start()
+    {
+        // SpriteRenderer bileþenini al
+        buttonSpriteRenderer = GetComponent<SpriteRenderer>();
+        // Baþlangýçta kapalý sprite'ý kullan
+        buttonSpriteRenderer.sprite = closeSprite;
+    }
 
     private void Update()
     {
         if (isTrigger)
         {
-            if (player1.CompareTag("Player1"))
+            if (isPlayer1InTrigger && player1.CompareTag("Player1") && Input.GetKeyDown(KeyCode.T))
             {
-                if (Input.GetKeyDown(KeyCode.T))
-                {
-                    // T tuþuna basýldýðýnda, ýþýk durumunu tersine çevir
-                    isLightOn = !isLightOn;
-
-                    // Iþýðý duruma göre aç veya kapat
-                    if (isLightOn)
-                    {
-                        ActivateLight();
-                    }
-                    else
-                    {
-                        DeactivateLight();
-                    }
-                }
+                ToggleLight();
             }
-            else if (player2.CompareTag("Player2"))
-            {
-                if (Input.GetKeyDown(KeyCode.K))
-                {
-                    // K tuþuna basýldýðýnda, ýþýk durumunu tersine çevir
-                    isLightOn = !isLightOn;
 
-                    // Iþýðý duruma göre aç veya kapat
-                    if (isLightOn)
-                    {
-                        ActivateLight();
-                    }
-                    else
-                    {
-                        DeactivateLight();
-                    }
-                }
+            if (isPlayer2InTrigger && player2.CompareTag("Player2") && Input.GetKeyDown(KeyCode.L))
+            {
+                ToggleLight();
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
+        if (other.CompareTag("Player1"))
+        {
+            isPlayer1InTrigger = true;
+            Debug.Log("Player 1 is in trigger");
+        }
+        else if (other.CompareTag("Player2"))
+        {
+            isPlayer2InTrigger = true;
+            Debug.Log("Player 2 is in trigger");
+        }
+
+        if (isPlayer1InTrigger || isPlayer2InTrigger)
         {
             isTrigger = true;
             Debug.Log("isTrigger true");
@@ -64,28 +64,35 @@ public class WhiteLightControl : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
+        if (other.CompareTag("Player1"))
+        {
+            isPlayer1InTrigger = false;
+            Debug.Log("Player 1 left trigger");
+        }
+        else if (other.CompareTag("Player2"))
+        {
+            isPlayer2InTrigger = false;
+            Debug.Log("Player 2 left trigger");
+        }
+
+        if (!isPlayer1InTrigger && !isPlayer2InTrigger)
         {
             isTrigger = false;
             Debug.Log("isTrigger false");
         }
     }
 
-    private void ActivateLight()
+    private void ToggleLight()
     {
-        if (associatedLight != null)
-        {
-            associatedLight.SetActive(true);
-            Debug.Log("Light on");
-        }
-    }
+        isLightOn = !isLightOn;
 
-    private void DeactivateLight()
-    {
         if (associatedLight != null)
         {
-            associatedLight.SetActive(false);
-            Debug.Log("Light off");
+            associatedLight.SetActive(isLightOn);
+            Debug.Log("Light is " + (isLightOn ? "on" : "off"));
+
+            // Sprite'ý duruma göre deðiþtir
+            buttonSpriteRenderer.sprite = isLightOn ? openSprite : closeSprite;
         }
     }
 }

@@ -8,9 +8,11 @@ public class Player2Movement : MonoBehaviour
 
     private bool isMoving = false;
 
+    Animator animator;
+
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class Player2Movement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             isMoving = false;
+            animator.SetBool("isRunning", false);
         }
     }
 
@@ -41,7 +44,18 @@ public class Player2Movement : MonoBehaviour
     {
         while (isMoving)
         {
+            // Hareket yönüne göre karakterin yönünü ayarla
+            if (direction == Vector3.left && transform.localScale.x > 0)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            }
+            else if (direction == Vector3.right && transform.localScale.x < 0)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            }
+
             transform.position += direction * speed * Time.deltaTime;
+            animator.SetBool("isRunning", true);
             yield return null;
         }
     }
