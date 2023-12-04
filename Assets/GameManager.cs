@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI playerText;
 
+    public Light2D allLights;
 
     private void Awake()
     {
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver(string winnerText)
     {
+        allLights.intensity = 1;
         gameOverPanel.SetActive(true);
         playerText.text = winnerText;
     }
