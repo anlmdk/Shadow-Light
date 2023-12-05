@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         if (remainingSeconds == -1)
         {
             remainingSeconds = 0;
-            GameOver("Shadow Won");
+            GameOver("Shadow Win");
         }
     }
     public void Reset()

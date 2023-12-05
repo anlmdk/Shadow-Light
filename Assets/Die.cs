@@ -9,7 +9,7 @@ public class Die : MonoBehaviour
         if (collision.gameObject.CompareTag("Player2"))
         {
             Time.timeScale = 0;
-            GameManager.instance.GameOver("Light Won");
+            GameManager.instance.GameOver("Light Win");
         }
     }
 }

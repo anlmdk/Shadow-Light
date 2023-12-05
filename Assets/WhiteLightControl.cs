@@ -30,7 +30,7 @@ public class WhiteLightControl : MonoBehaviour
     {
         if (isTrigger)
         {
-            if (isPlayer1InTrigger && player1.CompareTag("Player1") && Input.GetKeyDown(KeyCode.T))
+            if (isPlayer1InTrigger && player1.CompareTag("Player1") && Input.GetKeyDown(KeyCode.R))
             {
                 ToggleLight();
             }
