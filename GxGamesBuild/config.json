@@ -1,0 +1,20 @@
+{
+  "runOptions": {
+    "dataUrl": "Build/719d850daea9e518993bf7375bc3301a.data",
+    "frameworkUrl": "Build/c57e2ceebb0778808706b9b301818ff3.js",
+    "codeUrl": "Build/9acf50d965e5ab36190cf8f39281c1f4.wasm",
+    "streamingAssetsUrl": "StreamingAssets",
+    "companyName": "Default",
+    "productName": "Shadow _ Light",
+    "productVersion": "1.0"
+  },
+  "pageData": {
+    "backgroundColor": "#000000",
+    "backgroundFilename": "",
+    "height": "600",
+    "loaderFilename": "GxGamesBuild.loader.js",
+    "productName": "Shadow _ Light",
+    "productVersion": "1.0",
+    "width": "960"
+  }
+}
